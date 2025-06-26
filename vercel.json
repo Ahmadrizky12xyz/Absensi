@@ -1,7 +1,4 @@
-Build Failed
-Could not parse File as JSON: vercel.json
 
-3:32 AM
 {
   "version": 2,
   "builds": [
