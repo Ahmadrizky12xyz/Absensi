@@ -1,11 +1,21 @@
+Build Failed
+Could not parse File as JSON: vercel.json
+
+3:32 AM
 {
   "version": 2,
   "builds": [
-    { "src": "index.php", "use": "
+    {
+      "src": "api/*.php",
+      "use": "
 @vercel/php
-" }
+"
+    }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/index.php" }
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1.php"
+    }
   ]
 }
