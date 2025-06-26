@@ -1,16 +1,12 @@
 <?php
-$host = 'mysql-4ec7fa0-rizky15raditya-e894.d.aivencloud.com';
-$port = 21015;
-$dbname = 'defaultdb';
-$username = 'avnadmin';
-$password = 'AVNS_kDRQLgJnd6wDKbJmjgD';
+define('DB_HOST', 'switchyard.proxy.rlwy.net');
+define('DB_USER', 'root');
+define('DB_PASS', 'GimIJrayMAhWfrQSDRBRSSicHVbCWQNi');
+define('DB_NAME', 'railway');
+define('DB_PORT', 35645);
 
-// Koneksi pakai PDO dan SSL
-$pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $username, $password, [
-    PDO::MYSQL_ATTR_SSL_CA => __DIR__ . '/ca.pem', // Download dari Aiven console
-]);
-
-// Test koneksi
-if ($pdo) {
-    echo "Koneksi ke Aiven MySQL sukses!";
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+?>
