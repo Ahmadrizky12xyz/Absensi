@@ -1,5 +1,9 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+  "version": 2,
+  "builds": [
+    { "src": "api/*.php", "use": "@vercel/php" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1.php" }
   ]
 }
