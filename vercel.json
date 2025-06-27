@@ -1,3 +1,15 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "builds": [
+    {
+      "src": "index.php", // Sesuaikan dengan lokasi file utama
+      "use": "@vercel/php"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.php"
+    }
+  ]
 }
